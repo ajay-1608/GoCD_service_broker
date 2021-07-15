@@ -1,0 +1,12 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ClusterServiceBroker
+metadata:
+    name: simple-broker
+    namespace: default
+spec:
+    url: https://ab7b012bd0b3.ngrok.io/
+    authInfo:
+        basic:
+            secretRef:
+                name: bsec
+                namespace: default

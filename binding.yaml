@@ -1,0 +1,13 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceBinding
+metadata:
+  name: sbin
+  namespace: default
+spec:
+  instanceRef:
+    name: sins
+    authInfo:
+        basic:
+            secretRef:
+                name: bsec
+                namespace: default

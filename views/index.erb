@@ -1,0 +1,68 @@
+<%# <h1>Dock#index</h1>
+<p>Find me in app/views/dock/index.html.erb</p> %>
+    <!-- app/views/home/index.html.erb -->
+<html>
+<head>
+<style>
+.wrapper{
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .posts {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 200px;
+    box-shadow: 1px 1px rgb(68, 68, 68);
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    margin: auto;
+  }
+
+  .instance-data {
+    margin: 2px 2px 2px 2px;
+    font-size: 12px;
+  }
+
+  .instance-title {
+    margin: 2px auto 2px auto;
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="title">
+        <h1>Live Stream of Instances</h1>
+        <p>New instances will be loaded on page refresh</p>    
+    </div>
+
+    <div class="posts" id="post_section">
+        <% @posts.each do |post| %>
+            <div class="post-card">
+                <div class="instance-title">
+                    <p><%= post.title %></p>
+                </div>
+                <div class="instance-data" id="inst_data">
+                    <pre><%= JSON.pretty_generate(post.desc) %> %> </pre>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<body>
+</html>

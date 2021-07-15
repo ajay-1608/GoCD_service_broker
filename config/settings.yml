@@ -1,0 +1,41 @@
+catalog:
+  services: # catalog must advertise at least one service
+    - id: 5085f1cb-e093-4630-8795-843b76018eb8
+      name: github-repo
+      description: Provides read and write access to a GitHub repository.
+      bindable: true
+      tags:
+        - github
+      metadata:
+        displayName: GitHub Repo
+        imageUrl: https://raw2.github.com/github/media/master/octocats/blacktocat-32.png
+        longDescription: The service creates repos under the configured GitHub organization. Binding an app creates a deploy key for the repo that the example app uses to make commits to the repo.
+        providerDisplayName: GitHub
+      plans: # a service has one or more plans
+        - id: c05855e7-a55d-4ba1-b462-7579df7514f4
+          name: public
+          description: All repositories are public
+          metadata:
+            bullets:
+              - Repos are public
+            costs:
+              - amount:
+                  usd: 0.0
+                unit: MONTHLY
+            displayName: Public
+
+# credentials for Cloud Controller to authenticate with the broker
+basic_auth:
+  username: admin
+  password: password
+
+# credentials for broker to authenticate with the GitHub account
+github:
+  # An access token is used in place of username/password to access your GitHub account.
+  # To generate an access token run the following command then copy the value of "token" from the response.
+  # curl -u <your-github-username> -d '{"scopes": ["repo", "delete_repo"], "note": "CF Service Broker"}' https://api.github.com/authorizations
+  # username: 
+  # access_token: 
+
+gocd:
+  # server: 

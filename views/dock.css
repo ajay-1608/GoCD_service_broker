@@ -1,0 +1,38 @@
+/* // Place all the styles related to the Dock controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// app/assets/stylesheets/home.scss */
+
+  .wrapper{
+    font-family: "Lora", serif;
+    margin: auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .posts {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 300px;
+    height: 400px;
+    box-shadow: 1px 1px rgb(68, 68, 68);
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    margin: 20px 0px;
+  }
+
+  .body-trunc {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
